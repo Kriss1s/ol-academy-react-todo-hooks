@@ -1,3 +1,15 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --blue: rgb(47, 47, 210);
+  --yellow: rgb(213, 213, 69);
+  --red: rgb(221, 47, 47);
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +22,292 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.nav-icons {
+  color: white;
+  height: 100%;
+}
+.dark-mode {
+  background-image: url(./assets/images/alonso-navarro-Bwg5L-sks3g-unsplash.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  width: 100vw;
+  min-height: 100vh;
+}
+.main-container {
+  padding: 3% 8%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-black {
+  height: 7%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+}
+.left-side,
+.right-side {
+  width: 50%;
+  height: 100%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.add-todo-block {
+  margin: 0 auto;
+  color: white;
+  width: 60%;
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+.plus-wrapper {
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+}
+.icon {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+input:not(input[type='radio']),
+textarea {
+  width: 80%;
+  height: 2.3rem;
+  font-family: inherit;
+  color: white;
+  border-radius: 16px;
+  border: white solid 1px;
+  padding-left: 5%;
+  background-color: rgba(252, 252, 252, 0);
+  margin-bottom: 10%;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+input::placeholder,
+textarea::placeholder {
+  color: white;
+  padding-left: 5%;
+}
+
+input:not(input[type='radio']):focus,
+textarea:focus {
+  background: white;
+
+  color: black;
+  outline: none;
+  box-shadow: 0.05rem 0.05rem 0.2rem #dd687b;
+  transition: all 300ms ease;
+}
+.textArea {
+  resize: none;
+  height: 12.3rem;
+  width: 80%;
+  padding: 4%;
+}
+.task-name {
+  text-transform: uppercase;
+}
+.radio-block {
+  width: 80%;
+}
+.radio-btns-block {
+  margin-top: 0.5em;
+  width: 100%;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+
+  height: 2.3rem;
+  margin-bottom: 10%;
+}
+p,
+label {
+  font-size: 0.9rem;
+  width: 100%;
+}
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 1px solid white;
+  cursor: pointer;
+  width: calc(100% / 3);
+}
+label:last-child {
+  border-right: none;
+}
+input[type='radio'] {
+  width: 0;
+  opacity: 0;
+}
+span {
+  width: 15%;
+  height: 2.2rem;
+  margin-right: 4%;
+}
+label p {
+  margin-left: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.high-imp {
+  background-color: var(--red);
+}
+.high-imp-done {
+  color: var(--red);
+}
+input[type='radio'] + p {
+  opacity: 0;
+}
+input[class='high']:checked + p {
+  color: var(--red);
+  opacity: 100%;
+}
+
+.medium-imp {
+  background-color: var(--yellow);
+}
+.medium-imp-done {
+  color: var(--yellow);
+}
+input[class='medium']:checked + p {
+  color: var(--yellow);
+  opacity: 100%;
+}
+.low-imp {
+  background-color: var(--blue);
+}
+.low-imp-done {
+  color: var(--blue);
+}
+input[class='low']:checked + p {
+  color: var(--blue);
+  opacity: 100%;
+}
+.btn {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: inherit;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.save-btn {
+  width: 50%;
+  padding: 3% 0;
+}
+.btn:hover {
+  background-color: white;
+  color: #d0475e;
+  font-weight: bold;
+  box-shadow: 0.05rem 0.05rem 0.2rem #dd687b;
+}
+
+.add-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.one-item {
+  width: 80%;
+  margin-bottom: 3%;
+}
+.info {
+  margin: 2% 7%;
+}
+.one-item p {
+  margin-top: 3%;
+}
+.one-item .span {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 1.2rem;
+  border-radius: 16px 16px 0 0;
+}
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2%;
+  margin-top: 5%;
+  height: 2rem;
+}
+.warning {
+  color: (var(--red));
+}
+.btn-item {
+  width: 18%;
+  height: 80%;
+}
+ul {
+  list-style: none;
+}
+.li-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+li.with-bullet::marker {
+  list-style: circle;
+}
+.delete-buttons {
+  width: 80%;
+  display: flex;
+}
+.delete-btn {
+  margin: 2% 1% 2%;
+  width: 20%;
+  padding: 0.5% 0;
+}
+input[type='checkbox'].checkbox {
+  width: 4%;
+  margin: 0 2%;
+  padding: 0;
+}
+input[type='checkbox'].checkbox:focus {
+  box-shadow: none;
+}
+.done {
+  margin-top: 2%;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(44, 181, 69);
+  display: inline-block;
+  padding: 1.5% 3%;
+  width: 20%;
+  text-align: center;
+  border-radius: 50px;
+}
+.glass {
+  /* From https://css.glass */
+  background: rgba(252, 252, 252, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 253, 253, 0.94);
 }
