@@ -7,6 +7,13 @@ import {
   FaSortDown,
 } from 'react-icons/fa';
 import CorrectToDo from './CorrectTodo';
+
+const importanceClassName = {
+  high: 'high-imp',
+  medium: 'medium-imp',
+  low: 'low-imp',
+};
+
 function AddToDoList(props) {
   const [isFinished, setIsFinished] = useState(true);
   const updateIsFinished = () => setIsFinished(!isFinished);
@@ -14,15 +21,7 @@ function AddToDoList(props) {
   return (
     <li key={props.id} className={`glass one-item  `}>
       <span
-        className={`${
-          props.importance === 'high'
-            ? 'high-imp'
-            : props.importance === 'medium'
-            ? 'medium-imp'
-            : props.importance === 'low'
-            ? 'low-imp'
-            : ''
-        } span`}
+        className={`${importanceClassName[props.importance] || ''} span`}
       ></span>
       {isFinished ? (
         <>

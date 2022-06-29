@@ -142,7 +142,6 @@ function App() {
                 />
               )}
               <AddToDoList
-                // key={elem.id}
                 {...elem}
                 saveNewToDo={saveNewToDo}
                 deleteOne={deleteOne}

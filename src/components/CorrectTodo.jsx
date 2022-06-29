@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 
-export default function CorrectTodo(props) {
+export default function CorrectTodo({
+  id,
+  taskName,
+  description,
+  importance,
+  isDone,
+  updateInfo,
+  updateIsFinished,
+}) {
   const [todo, setTodo] = useState({
-    id: props.id,
-    taskName: props.taskName,
-    description: props.description,
-    importance: props.importance,
-    isDone: props.isDone,
+    id,
+    taskName,
+    description,
+    importance,
+    isDone,
   });
 
   const saveCorrectTodo = () => {
-    props.updateInfo(todo);
-    props.updateIsFinished();
+    updateInfo(todo);
+    updateIsFinished();
   };
-  // useEffect(() => console.log(todo), [todo]);
+
   return (
     <div className='div'>
       <input

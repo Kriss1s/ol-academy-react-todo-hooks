@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
-function NewToDo(props) {
+function NewToDo({ todos, saveNewToDo }) {
   const [todo, setTodo] = useState({
     id: '',
     taskName: '',
@@ -10,27 +10,25 @@ function NewToDo(props) {
   });
   const generateNewId = () => {
     const indexesArray = [];
-    console.log(props.todos);
-    props.todos.forEach(element => {
+    todos.forEach(element => {
       indexesArray.push(element.id);
     });
 
-    const newId = props.todos.length === 0 ? 0 : Math.max(...indexesArray) + 1;
-    return newId;
+    return todos.length === 0 ? 0 : Math.max(...indexesArray) + 1;
   };
 
   const checknewItem = name => {
-    return props.todos.every(e => e.taskName !== name);
+    return todos.every(e => e.taskName !== name);
   };
 
   const addNewItem = () => {
-    const newTodos = [...props.todos];
+    const newTodos = [...todos];
 
     const checkedName = checknewItem(todo.taskName);
 
     if (checkedName && todo.taskName !== '') {
       newTodos.push(todo);
-      props.saveNewToDo(newTodos);
+      saveNewToDo(newTodos);
       setTodo({
         id: '',
         taskName: '',
